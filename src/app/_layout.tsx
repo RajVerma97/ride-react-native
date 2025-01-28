@@ -1,11 +1,11 @@
-import '../global.css'
+import '../../global.css'
 import { useFonts } from 'expo-font'
 import { Stack } from 'expo-router'
 import * as SplashScreen from 'expo-splash-screen'
 import { useEffect } from 'react'
 import 'react-native-reanimated'
 
-export default function RootLayout() {
+export default function AppLayout() {
   const [loaded] = useFonts({
     'Jakarta-Bold': require('../assets/fonts/PlusJakartaSans-Bold.ttf'),
     'Jakarta-ExtraBold': require('../assets/fonts/PlusJakartaSans-ExtraBold.ttf'),
@@ -28,6 +28,9 @@ export default function RootLayout() {
 
   return (
     <Stack>
+      <Stack.Screen name="index" options={{ headerShown: false }} />
+      <Stack.Screen name="(dashboard)" options={{ headerShown: false }} />
+      <Stack.Screen name="(auth)" options={{ headerShown: false }} />
       <Stack.Screen name="+not-found" />
     </Stack>
   )
